@@ -1,0 +1,3 @@
+rootProject.name = 'myBlogApp'
+include 'lib'
+
