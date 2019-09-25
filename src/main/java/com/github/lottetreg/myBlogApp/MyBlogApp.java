@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class MyBlogApp {
   public static void main(String[] args) {
     try {
-      new Matcha().serve(Integer.parseInt(args[0]), new ArrayList<>());
+      new Matcha(new ArrayList<>()).serve(Integer.parseInt(args[0]));
     } catch (IOException e) {
       e.printStackTrace();
     }
