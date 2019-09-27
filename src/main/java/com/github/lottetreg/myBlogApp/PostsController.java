@@ -10,4 +10,14 @@ public class PostsController extends BaseController {
     addData("posts", BaseModel.all(Post.class));
     return new Template("/templates/posts/index.twig.html");
   }
+
+  public Template show1() {
+    addData("post", BaseModel.findBy(Post.class, "slug", "how-to-do-something"));
+    return new Template("/templates/posts/show.twig.html");
+  }
+
+  public Template show2() {
+    addData("post", BaseModel.findBy(Post.class, "slug", "how-to-catch-a-pickle"));
+    return new Template("/templates/posts/show.twig.html");
+  }
 }
