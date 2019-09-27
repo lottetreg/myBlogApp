@@ -19,7 +19,9 @@ public class MyBlogApp {
 
   private static List<Responsive> getRoutes() {
     return Arrays.asList(
-        new Route("GET", "/posts", PostsController.class, "index")
+        new Route("GET", "/posts", PostsController.class, "index"),
+        new Route("GET", "/posts/how-to-do-something", PostsController.class, "show1"),
+        new Route("GET", "/posts/how-to-catch-a-pickle", PostsController.class, "show2")
     );
   }
 }
