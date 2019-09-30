@@ -1,7 +1,7 @@
 package com.github.lottetreg.myBlogApp;
 
 import com.github.lottetreg.matcha.Matcha;
-import com.github.lottetreg.matcha.Responsive;
+import com.github.lottetreg.matcha.Routable;
 import com.github.lottetreg.matcha.Route;
 
 import java.io.IOException;
@@ -17,11 +17,10 @@ public class MyBlogApp {
     }
   }
 
-  private static List<Responsive> getRoutes() {
+  private static List<Routable> getRoutes() {
     return Arrays.asList(
         new Route("GET", "/posts", PostsController.class, "index"),
-        new Route("GET", "/posts/how-to-do-something", PostsController.class, "show1"),
-        new Route("GET", "/posts/how-to-catch-a-pickle", PostsController.class, "show2")
+        new Route("GET", "/posts/:slug", PostsController.class, "show")
     );
   }
 }
