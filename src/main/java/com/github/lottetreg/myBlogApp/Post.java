@@ -1,10 +1,10 @@
 package com.github.lottetreg.myBlogApp;
 
-import com.github.lottetreg.matcha.BaseModel;
+import com.github.lottetreg.matcha.Model;
 
 import java.util.Map;
 
-public class Post extends BaseModel {
+public class Post extends Model {
   public String slug;
   public String title;
   public String body;
