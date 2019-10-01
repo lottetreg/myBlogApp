@@ -20,7 +20,9 @@ public class MyBlogApp {
   private static List<Routable> getRoutes() {
     return Arrays.asList(
         new Route("GET", "/posts", PostsController.class, "index"),
-        new Route("GET", "/posts/:slug", PostsController.class, "show")
+        new Route("GET", "/posts/new", PostsController.class, "newForm"),
+        new Route("GET", "/posts/:slug", PostsController.class, "show"),
+        new Route("POST", "/posts", PostsController.class, "create")
     );
   }
 }
