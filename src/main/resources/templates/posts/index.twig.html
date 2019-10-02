@@ -1,5 +1,18 @@
-{% for post in posts %}
-<h3>{{ post.title }}</h3>
-<p>{{ post.body }}</p>
-<br>
-{% endfor %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+</head>
+
+<body>
+    {% include "/partials/nav.html" %}
+    <div class="posts">
+        {% for post in posts %}
+        <div>
+            <a href={{ concat("/posts/", post.slug) | escape(false) }}><h3>{{ post.title }}</h3></a>
+            <p class="truncate">{{ post.body }}</p>
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+</body>
