@@ -1,6 +1,7 @@
 package com.github.lottetreg.myBlogApp;
 
 import com.github.lottetreg.matcha.Matcha;
+import com.github.lottetreg.matcha.RedirectRoute;
 import com.github.lottetreg.matcha.Routable;
 import com.github.lottetreg.matcha.Route;
 
@@ -19,6 +20,7 @@ public class MyBlogApp {
 
   private static List<Routable> getRoutes() {
     return Arrays.asList(
+        new RedirectRoute("GET", "/", "/posts"),
         new Route("GET", "/posts", PostsController.class, "index"),
         new Route("GET", "/posts/new", PostsController.class, "newForm"),
         new Route("GET", "/posts/:slug", PostsController.class, "show"),
