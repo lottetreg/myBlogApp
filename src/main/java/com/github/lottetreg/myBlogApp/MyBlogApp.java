@@ -24,7 +24,8 @@ public class MyBlogApp {
         new Route("GET", "/posts", PostsController.class, "index"),
         new Route("GET", "/posts/new", PostsController.class, "newForm"),
         new Route("GET", "/posts/:slug", PostsController.class, "show"),
-        new Route("POST", "/posts", PostsController.class, "create")
+        new Route("POST", "/posts", PostsController.class, "create"),
+        new Route("POST", "/comments", CommentsController.class, "create")
     );
   }
 }
