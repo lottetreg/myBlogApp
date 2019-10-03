@@ -5,6 +5,8 @@ import com.github.lottetreg.matcha.Model;
 import com.github.lottetreg.matcha.Redirect;
 import com.github.lottetreg.matcha.Template;
 
+import java.util.List;
+
 public class PostsController extends BaseController {
 
   public Template index() {
@@ -14,8 +16,11 @@ public class PostsController extends BaseController {
   }
 
   public Template show() {
-    Post post = Model.findBy(Post.class, "slug", getParam("slug"));
+    Post post = Model.findFirstBy(Post.class, "slug", getParam("slug"));
     addData("post", post);
+
+    List<Comment> comments = Model.findBy(Comment.class, "postSlug", post.slug);
+    addData("comments", comments);
 
     return new Template("/templates/posts/show.twig.html");
   }

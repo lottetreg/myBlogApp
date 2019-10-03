@@ -4,12 +4,11 @@ import com.github.lottetreg.matcha.Model;
 
 import java.util.Map;
 
-public class Post extends Model {
-  public String slug;
-  public String title;
+public class Comment extends Model {
+  public String postSlug;
   public String body;
 
-  public Post(Map<String, Object> data) {
+  public Comment(Map<String, Object> data) {
     super(data);
   }
 }
